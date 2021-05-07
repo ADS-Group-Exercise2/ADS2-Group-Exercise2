@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Brief Introduction
 
-ADS Group Project aims to explore the prevalence and death rate of diseases related to the use of alcohol and opioids. To know more information about our project, you can visit our project on GitHub (\textcolor{blue}{https://github.com/ADS-Group-Exercise2/ADS2-Group-Exercise2}). We restored our supplementarty files there, including:
+ADS Group Project aims to explore the prevalence and death rate of diseases related to the use of alcohol and opioids. To know more information about our project, you can visit our project on GitHub (\textcolor{blue}{https://github.com/ADS-Group-Exercise2/ADS2-Group-Exercise2}). We restored our supplementary files there, including:
 
 - our project R Markdown file ("ADS2_GroupExercise2.Rmd")
 - three pictures ("country.png","percentage.png", "world.png") and the table ("substance_use.csv") used in the R Markdown file
@@ -123,10 +123,9 @@ for(i in 1:9){
 
 The result shows that the data of all age groups fulfill the requirement of normality of residuals and equality of variances, thus the assumptions for the linear regression are met.
 
-
 After verifying the assumptions, we run the linear regression and collect the results. 
 
-### Plotting the figure with the regression line
+- Plotting the figure with the regression line
 
 ```{r plot_regression_line, message=FALSE, fig.width=10}
 ggplot(opioid)+
@@ -134,12 +133,12 @@ ggplot(opioid)+
   facet_grid(sex~age)+
   stat_smooth(aes(year,val,color="linear regression"),method = lm)+
   scale_size_manual(values=0.1)+
-  ggtitle("Prevalence of Opioid use disorders in the United States \n with linear regression")+
+  ggtitle("Prevalence of Opioid use disorders in the United States with linear regression")+
   scale_colour_manual(values=c("red","black","blue"))+
   theme(axis.text.x = element_text(angle=90, hjust=1, vjust=.5))
 ```
 
-### Performing the linear regression
+- Performing the linear regression
 
 ```{r linear_regression}
 vec<-unique(opioid$age)
@@ -184,7 +183,7 @@ After the linear regression, the curve with people aged from 25 to 29 has the hi
 
 
 ## Part 2: Ask your own question
-
+### Our investigation to our own question: 
 At first, we were curious about how has the prevalence and death rate of alcohol-related disorders changed over the years respectively in different regions around the world? And we decided to plot them for visualization.
 
 ```{r overall_alcohol_region, fig.width=10,fig.height=5.5}
@@ -248,7 +247,7 @@ shapiro.test(ECA$val)
 shapiro.test(no_ECA$val)
 ```
 
-p for two samples are all smaller than 0.05, which means they are not normal-distributed, so we cannot use a t-test and we decided to use the Wilcoxon test (non-parametric test) instead.
+The p values for two samples are all smaller than 0.05, which means they are not normal-distributed, so we cannot use a t-test and we decided to use the Wilcoxon test (non-parametric test) instead.
 
 
 ```{r wilcoxon_test}
@@ -259,7 +258,7 @@ wilcox.test(ECA$val,no_ECA$val,alternative = "greater",var.equal="F")
 The outcome of the Wilcoxon test shows that the p-value is smaller than 2.2e-16, and thus the null hypothesis is rejected, and the death rate in Europe and Central Asia is higher than that in other 6 regions in the world.
 
 
-## Our interpretation of the result: 
+### Our interpretation of the result: 
 
 Next we want to interpret our result from five different aspects:
 
@@ -277,8 +276,6 @@ Next we want to interpret our result from five different aspects:
 Government monopoly and business licensing system aim to provide a controllable system of alcohol business, thus better limiting the size of the alcohol industry. Based on the Global Status Report: Alcohol Policy from WHO, there are 12% of investigated countries that didn’t apply any government monopoly and business licensing system, and most of which are European countries.
 - Restrictions on the retail of alcohol  
 To set restrictions on the retail of alcohol, there are mainly three parts, which are restrictions set on duration, restrictions set on the sites, and restrictions set on the density of the places for alcohol sales. Based on the Global Status Report: Alcohol Policy from WHO, the American Region has the highest amount of performed restrictions on duration and sites, followed by the Southeast Asia Region and West Pacific Region. On the contrary, the European and African regions have fewer restrictions. Lack of restriction together with a better economic condition in the European Region may account for the high alcohol consumption. 
-- Age limits for the purchase and consumption of alcoholic beverages  
-Since the age limits around the world are between 15 to 21, it is quite understandable that the age limits may not contribute to the significant difference we found, as the data set only record those over 25 years old who are allowed to drink.
 
 ####	Weather 
 
@@ -296,7 +293,7 @@ Since the age limits around the world are between 15 to 21, it is quite understa
 
 - When we focused on part2, we first came up with an idea to find the factor that affects the death/prevalence rate most, since the dataset provided us with several factors like age group, location, and so on. However, when we tried to perform the MLR (Multiple Linear Regression) after the verification of assumptions of the MLR, the result showed that all factors influenced the death/prevalence rate significantly, which meant we can not tell the most influential factor. Moreover, geographic location cannot be simply regarded as a single factor like gender or age group, because factors such as weather and economics will be different as location changes. For example, the difference between North America and Europe could not be the same as the difference between North America and Africa. In other words, the effect of location is not linear like age group, using linear regression might be meaningless.
 
-### References
+## References
 World Health Organization. (2018) *Global status report on alcohol and health 2018*. Available at: https://apps.who.int/iris/bitstream/handle/10665/274603/9789241565639-eng.pdf?ua=1 [Accessed 05/05/2021].
 
 Solov’ev. (2009) Worldwide Alcohol Production and Distribution. *Studies on Russian Economic Development*. Vol. 21, No. 4, pp. 411–425.
