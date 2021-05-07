@@ -4,7 +4,7 @@ ADS Group Project aims to explore the prevalence and death rate of diseases rela
 
 ## Tools Used
 
-Please install the **R 4.0+** to run this project and use Latex to knit R Markdown file. This is a R-based project and you should first install "rmarkdown", "dplyr", "tidyr" and "ggplot2" package.
+Please install the **R 4.0+** to run this project and use MiKTeX to knit R Markdown file. This is a R-based project and you should first install "rmarkdown", "dplyr", "tidyr" and "ggplot2" packages.
 
 ## Files in Repository
 
