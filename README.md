@@ -11,7 +11,7 @@ Please install the **R 4.0+** to run this project and use MiKTeX to knit R Markd
 Here is a brief introduction about the files in our repository:
 
 - our project R Markdown file ("ADS2_GroupExercise2.Rmd")
-- three pictures ("country.png","percentage.png", "world.png") and table ("substance_use.csv") used in the R Markdown file
+- three pictures ("country.png": figure1,"percentage.png": figure2, "world.png":figure3) and table ("substance_use.csv") used in the R Markdown file
 - PDF file ("ADS2_GroupExercise2.pdf") knitted from R Markdown file using MiKTeX
 
 ## Reminder about knitting
@@ -20,4 +20,4 @@ Before knit: First put the table used ("substance_use.csv") to the same director
 
 *P.S. If you cannot knit because of the pictures not found error, you may alternatively download the pictures from our repository and put them to the same directory where your R Markdown file is.*
 
-After knit: The output will be PDF document. When we worked on this project, we found that the output might look different when knitting on different computers. This might due to how you knit it (using tinyTex or LaTex). To emphasize, the PDF document we uploaded was knitted using MiKTeX.
+After knit: The output will be PDF document. When we worked on this project, we found that the output might look different when knitting on different computers. This might due to how you knit it. To emphasize, the PDF document we uploaded was knitted using MiKTeX.
